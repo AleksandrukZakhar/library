@@ -1,10 +1,16 @@
 const library = [];
+const add = document.getElementById("add");
+const inputContainer = document.querySelector(".input-container");
 const title = document.getElementById("title");
 const author = document.getElementById("author");
 const pages = document.getElementById("pages");
 const read = document.getElementById("read");
 const submit = document.getElementById("submit");
-const bookContainer = document.querySelector(".book-container");
+const bookContainer = document.querySelector(".books-container");
+
+add.addEventListener("click", () =>
+  inputContainer.classList.replace("hide", "show")
+);
 
 function Book(title, author, pages, read) {
   this.title = title;
@@ -17,6 +23,7 @@ const addBook = (book) => library.push(book);
 
 submit.addEventListener("click", () => {
   addBook(new Book(title.value, author.value, pages.value, read.value));
+  inputContainer.classList.replace("show", "hide");
 
   const book = library[library.length - 1];
 
