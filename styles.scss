@@ -65,8 +65,12 @@ label:not([for="read"]) {
 }
 
 label[for="read"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .2rem;
+    padding-top: .3rem;
     font-size: 4px;
-    margin: 0 30px 10px 10px;
 }
 
 label {
@@ -100,4 +104,11 @@ input:not([type="checkbox"]) {
 
 .show {
     display: flex;
+}
+
+.books-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
 }
