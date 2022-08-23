@@ -42,12 +42,16 @@ submit.addEventListener("click", () => {
   pagesElement.textContent = `Pages: ${book.pages}`;
   bookContainer.appendChild(pagesElement);
 
+  const changeRead = document.createElement("input");
+  changeRead.setAttribute("type", "checkbox");
+
   const readElement = document.createElement("p");
 
   if (!read.checked) {
     readElement.textContent = "I haven't read it yet";
   } else {
     readElement.textContent = "I have read it";
+    changeRead.setAttribute("checked", "checked");
   }
 
   bookContainer.appendChild(readElement);
@@ -55,9 +59,6 @@ submit.addEventListener("click", () => {
   const changeReadLabel = document.createElement("label");
   changeReadLabel.textContent = "Have you read it yet";
   changeReadLabel.setAttribute("for", "read");
-
-  const changeRead = document.createElement("input");
-  changeRead.setAttribute("type", "checkbox");
 
   changeRead.addEventListener("click", () => {
     if (changeRead.checked) {
