@@ -15,9 +15,12 @@ body {
 }
 
 .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     width: 100vw;
-    height: 1.4rem;
-    text-align: center;
+    height: 4rem;
     background-color: $black-primary;
     color: $white-primary;
 }
@@ -28,6 +31,7 @@ button {
     color: $white-primary;
     border: 0;
     width: 5rem;
+    height: 2rem;
     border-radius: 10px;
     margin: .6rem auto;
 }
@@ -46,22 +50,22 @@ button:hover {
 }
 
 .color-container {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.7rem;
     background-color: $black-primary;
     color: $white-primary;
-    width: 100px;
-    height: 180px;
+    width: 200px;
+    height: 350px;
     border: 0;
     border-radius: 5px;
 }
 
 p {
-    font-size: 12px;
+    font-size: 20px;
     text-align: center;
-}
-
-label:not([for="read"]) {
-    margin-left: 10px;
 }
 
 label[for="read"] {
@@ -70,22 +74,22 @@ label[for="read"] {
     align-items: center;
     gap: .2rem;
     padding-top: .3rem;
-    font-size: 4px;
+    font-size: 0.8rem;
 }
 
 label {
-    font-size: 8px;
+    font-size: 1rem;
 }
 
 input:not([type="checkbox"]) {
     display: block;
-    width: 80px;
+    width: 120px;
     border: 0;
     border-radius: 10px;
-    height: 10px;
-    margin: .2rem auto 0 auto;
+    height: 25px;
     font-size: 10px;
     text-align: center;
+    font-size: 1rem;
 }
 
 
