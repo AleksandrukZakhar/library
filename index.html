@@ -12,20 +12,32 @@
     <div class="header"><h1>.library</h1></div>
     <button id="add">Add book</button>
     <div class="input-container hide">
-      <div class="color-container">
+      <form novalidate class="color-container">
         <p>Add new book</p>
         <label for="title">Title</label>
-        <input type="text" id="title" required />
+        <input
+          type="text"
+          id="title"
+          minlength="4"
+          pattern="[a-z]"
+          required
+        />
         <label for="author">Author</label>
-        <input type="text" id="author" required />
+        <input
+          type="text"
+          id="author"
+          minlength="4"
+          pattern="[a-z]"
+          required
+        />
         <label for="pages">Pages</label>
-        <input type="number" id="pages" required />
+        <input type="number" id="pages" maxlength="4" required />
         <label for="read"
           >Have you read it? <input type="checkbox" id="read"
         /></label>
         <button type="submit" id="submit">Add book</button>
       </div>
-    </div>
+    </form>
     <div class="books-container"></div>
   </body>
 </html>
