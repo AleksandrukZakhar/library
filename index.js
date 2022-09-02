@@ -85,31 +85,43 @@ submit.addEventListener("click", () => {
   read.value = "";
 });
 
-const validate = (el, patternTitle, pattern) => {
-  if (title.validity.valueMissing) {
+const validate = (el, patternMismatchText, pattern) => {
+  const regex = pattern;
+
+  if (el.validity.valueMissing) {
     el.setCustomValidity("Fill this field");
     el.reportValidity();
-  } else if (title.validity.tooShort) {
+  } else if (el.validity.tooShort) {
     el.setCustomValidity("Title must be at least 4 characters long");
     el.reportValidity();
-  } else if (title.validity.patternMismatch) {
-    el.setCustomValidity(
-      `${patternTitle} is invalid follow this example ${pattern}`
-    );
+  } else if (!regex.test(el.value)) {
+    el.setCustomValidity(patternMismatchText);
     el.reportValidity();
-  } else title.setCustomValidity("");
+  } else el.setCustomValidity("");
 };
 
 title.addEventListener("input", () => {
-  validate(title, "Title", "Harry Potter and the Philosophers Stone");
+  validate(
+    title,
+    "Data is invalid it must only contain characters from a to z",
+    /[a-z]/gi
+  );
 });
 
 author.addEventListener("input", () => {
-  validate(author, "Author's name", "J K Rowling");
+  validate(
+    author,
+    "Data is invalid it must only contain characters from a to z",
+    /[a-z]/gi
+  );
 });
 
 pages.addEventListener("input", () => {
-  validate(pages, "Pages count", "319");
+  validate(
+    pages,
+    "Data is invalid it must only contain characters from 0 to 9",
+    /[0-9]/
+  );
 });
 
 form.addEventListener("submit", (e) => e.preventDefault());
